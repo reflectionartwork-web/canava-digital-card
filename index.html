@@ -6,8 +6,8 @@
     <title>Canava Textile Gallery - Digital Card</title>
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: Montserrat for text, Great Vibes for calligraphy slogan -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         :root {
             /* Pure Matte Palette */
@@ -19,6 +19,7 @@
             --soft-bg: #f5f7fa;
             --text-dark: #0a1128;
             --text-muted: #5c6880;
+            --text-white: #ffffff;
         }
 
         * {
@@ -28,7 +29,9 @@
         }
 
         body {
-            background-color: var(--bg-body);
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-position: center;
             color: var(--text-dark);
             font-family: 'Montserrat', sans-serif;
             display: flex;
@@ -43,21 +46,26 @@
             max-width: 400px;
             background: var(--card-white);
             border-radius: 20px;
-            padding: 35px 25px;
+            overflow: hidden; /* Important for background effects */
             box-shadow: 0 10px 30px rgba(10, 17, 40, 0.08);
             border: 1px solid var(--soft-border);
             text-align: center;
             position: relative;
         }
 
-        /* Logo Header */
-        .logo-section {
-            margin-bottom: 15px;
+        /* Darkened Background Area under Logo & Slogan */
+        .logo-header-area {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px 20px 25px; /* Spacing above/below logo and slogan */
+            color: var(--text-white);
         }
 
+        /* FIXED: Changed from .brand-logo.png to .brand-logo */
         .brand-logo {
             width: 100%;
-            max-width: 300px; /* Increased size here */
+            max-width: 280px; /* Sized nicely to display prominent and clear */
             height: auto;
             display: block;
             margin: 0 auto;
@@ -65,19 +73,25 @@
         }
 
         .slogan {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--matte-navy);
+            font-family: 'Great Vibes', cursive;
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--text-white);
             margin-top: 15px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-transform: none;
         }
 
-        .divider {
+        /* Divider below the dark header area */
+        .header-divider {
             height: 1px;
             background-color: var(--soft-border);
-            margin: 20px 0;
             border: none;
+        }
+
+        /* The main content area below the dark header */
+        .main-content {
+            padding: 30px 25px;
         }
 
         /* Small Circular Social Buttons */
@@ -271,60 +285,64 @@
 
     <div class="card-container">
         
-        <!-- Header & Logo Image -->
-        <div class="logo-section">
-            <img src="canava logo.png" alt="Canava Textile Gallery Logo" class="brand-logo">
+        <!-- Darkened Header Area with Background & White Logo -->
+        <div class="logo-header-area">
+            <!-- FIXED: Make sure your image file is named logo.png in the same folder -->
+            <img src="logo.png" alt="Canava Textile Gallery Logo" class="brand-logo">
             <div class="slogan">Where Luxury Is Woven</div>
         </div>
 
-        <hr class="divider">
+        <hr class="header-divider">
 
-        <!-- Social Media Section -->
-        <div class="socials-section">
-            <a href="https://wa.me/963946433300" target="_blank" class="social-btn" title="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-            <a href="https://www.instagram.com/canavaaleppo" target="_blank" class="social-btn" title="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://t.me/m123hammad" target="_blank" class="social-btn" title="Telegram">
-                <i class="fab fa-telegram-plane"></i>
-            </a>
-        </div>
+        <!-- The rest of the card content area -->
+        <div class="main-content">
+            <!-- Social Media Section -->
+            <div class="socials-section">
+                <a href="https://wa.me/963946433300" target="_blank" class="social-btn" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/canavaaleppo" target="_blank" class="social-btn" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://t.me/m123hammad" target="_blank" class="social-btn" title="Telegram">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </div>
 
-        <!-- Contact Section -->
-        <div class="contact-info">
-            <!-- Phone Number -->
-            <a href="tel:+963946433300" class="info-item">
-                <i class="fas fa-phone-alt"></i>
-                <div class="info-text">+963 946 433 300</div>
-            </a>
+            <!-- Contact Section -->
+            <div class="contact-info">
+                <!-- Phone Number -->
+                <a href="tel:+963946433300" class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="info-text">+963 946 433 300</div>
+                </a>
 
-            <!-- Email -->
-            <a href="mailto:Canavafabrics@gmail.com" class="info-item">
-                <i class="far fa-envelope"></i>
-                <div class="info-text">Canavafabrics@gmail.com</div>
-            </a>
+                <!-- Email -->
+                <a href="mailto:Canavafabrics@gmail.com" class="info-item">
+                    <i class="far fa-envelope"></i>
+                    <div class="info-text">Canavafabrics@gmail.com</div>
+                </a>
 
-            <!-- Location -->
-            <a href="https://maps.google.com/?q=36.220867,37.126011" target="_blank" class="info-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <div class="info-text">Aleppo - Syria - Almogambo - Patchi st.</div>
-            </a>
-        </div>
+                <!-- Location -->
+                <a href="https://maps.google.com/?q=36.220867,37.126011" target="_blank" class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="info-text">Aleppo - Syria - Almogambo - Patchi st.</div>
+                </a>
+            </div>
 
-        <!-- Action Buttons -->
-        <div class="action-buttons">
-            <button class="btn btn-primary" onclick="openPortfolio()">
-                <i class="fas fa-images"></i> Our Portfolio
-            </button>
-            <button class="btn btn-secondary" onclick="downloadVCard()">
-                <i class="fas fa-address-card"></i> Save Contact (vCard)
-            </button>
-        </div>
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="openPortfolio()">
+                    <i class="fas fa-images"></i> Our Portfolio
+                </button>
+                <button class="btn btn-secondary" onclick="downloadVCard()">
+                    <i class="fas fa-address-card"></i> Save Contact (vCard)
+                </button>
+            </div>
 
-        <div class="footer-tag">
-            © CANAVA TEXTILE GALLERY
+            <div class="footer-tag">
+                © CANAVA TEXTILE GALLERY
+            </div>
         </div>
 
     </div>
