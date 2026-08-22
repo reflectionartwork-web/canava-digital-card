@@ -46,26 +46,24 @@
             max-width: 400px;
             background: var(--card-white);
             border-radius: 20px;
-            overflow: hidden; /* Important for background effects */
+            overflow: hidden; 
             box-shadow: 0 10px 30px rgba(10, 17, 40, 0.08);
             border: 1px solid var(--soft-border);
             text-align: center;
             position: relative;
         }
 
-        /* Darkened Background Area under Logo & Slogan */
         .logo-header-area {
             background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg');
             background-size: cover;
             background-position: center;
-            padding: 40px 20px 25px; /* Spacing above/below logo and slogan */
+            padding: 40px 20px 25px; 
             color: var(--text-white);
         }
 
-        /* FIXED: Changed from .brand-logo.png to .brand-logo */
         .brand-logo {
             width: 100%;
-            max-width: 280px; /* Sized nicely to display prominent and clear */
+            max-width: 280px; 
             height: auto;
             display: block;
             margin: 0 auto;
@@ -82,19 +80,16 @@
             text-transform: none;
         }
 
-        /* Divider below the dark header area */
         .header-divider {
             height: 1px;
             background-color: var(--soft-border);
             border: none;
         }
 
-        /* The main content area below the dark header */
         .main-content {
             padding: 30px 25px;
         }
 
-        /* Small Circular Social Buttons */
         .socials-section {
             display: flex;
             justify-content: center;
@@ -123,7 +118,6 @@
             border-color: var(--matte-navy);
         }
 
-        /* Contact Details Section */
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -163,7 +157,6 @@
             word-break: break-word;
         }
 
-        /* Buttons Section */
         .action-buttons {
             display: flex;
             flex-direction: column;
@@ -186,6 +179,7 @@
             gap: 10px;
             transition: all 0.2s ease;
             text-transform: uppercase;
+            text-decoration: none;
         }
 
         .btn-primary {
@@ -195,6 +189,7 @@
 
         .btn-primary:hover {
             background: var(--matte-navy-hover);
+            color: var(--card-white);
         }
 
         .btn-secondary {
@@ -214,89 +209,20 @@
             letter-spacing: 1px;
             font-weight: 500;
         }
-
-        /* Modal Overlay for Portfolio */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(10, 17, 40, 0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: var(--card-white);
-            border-radius: 16px;
-            max-width: 400px;
-            width: 100%;
-            padding: 25px 20px;
-            position: relative;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .modal-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--matte-navy);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 20px;
-            color: var(--text-muted);
-            cursor: pointer;
-        }
-
-        .close-btn:hover {
-            color: var(--matte-navy);
-        }
-
-        .modal-gallery {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            max-height: 60vh;
-            overflow-y: auto;
-        }
-
-        .gallery-img {
-            width: 100%;
-            border-radius: 10px;
-            border: 1px solid var(--soft-border);
-            object-fit: cover;
-        }
     </style>
 </head>
 <body>
 
     <div class="card-container">
         
-        <!-- Darkened Header Area with Background & White Logo -->
         <div class="logo-header-area">
-            <!-- FIXED: Make sure your image file is named logo.png in the same folder -->
             <img src="logo.png" alt="Canava Textile Gallery Logo" class="brand-logo">
             <div class="slogan">Where Luxury Is Woven</div>
         </div>
 
         <hr class="header-divider">
 
-        <!-- The rest of the card content area -->
         <div class="main-content">
-            <!-- Social Media Section -->
             <div class="socials-section">
                 <a href="https://wa.me/963946433300" target="_blank" class="social-btn" title="WhatsApp">
                     <i class="fab fa-whatsapp"></i>
@@ -309,32 +235,28 @@
                 </a>
             </div>
 
-            <!-- Contact Section -->
             <div class="contact-info">
-                <!-- Phone Number -->
                 <a href="tel:+963946433300" class="info-item">
                     <i class="fas fa-phone-alt"></i>
                     <div class="info-text">+963 946 433 300</div>
                 </a>
 
-                <!-- Email -->
                 <a href="mailto:canavatextile@gmail.com" class="info-item">
                     <i class="far fa-envelope"></i>
                     <div class="info-text">canavatextile@gmail.com</div>
                 </a>
 
-                <!-- Location -->
                 <a href="https://maps.google.com/?q=36.220867,37.126011" target="_blank" class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div class="info-text">Aleppo - Syria - Almogambo - Patchi st.</div>
                 </a>
             </div>
 
-            <!-- Action Buttons -->
             <div class="action-buttons">
-                <button class="btn btn-primary" onclick="openPortfolio()">
+                <!-- تم التعديل هنا: تحويل الزر إلى رابط لتحميل أو عرض ملف PDF -->
+                <a href="portfolio.pdf" target="_blank" class="btn btn-primary">
                     <i class="fas fa-images"></i> Our Portfolio
-                </button>
+                </a>
                 <button class="btn btn-secondary" onclick="downloadVCard()">
                     <i class="fas fa-address-card"></i> Save Contact (vCard)
                 </button>
@@ -347,38 +269,7 @@
 
     </div>
 
-    <!-- Portfolio Popup Modal -->
-    <div class="modal" id="portfolioModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="modal-title">Our Portfolio</span>
-                <button class="close-btn" onclick="closePortfolio()">&times;</button>
-            </div>
-            <div class="modal-gallery">
-                <img src="photo_2026-08-01_13-30-21.jpg" alt="Natural Wool Upholstery" class="gallery-img">
-                <img src="photo_2026-08-01_13-30-39.jpg" alt="Luxury Fabric Sofa" class="gallery-img">
-                <img src="photo_2026-08-01_13-30-43.jpg" alt="Patterned Fabric Chair" class="gallery-img">
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Modal Logic
-        function openPortfolio() {
-            document.getElementById('portfolioModal').style.display = 'flex';
-        }
-
-        function closePortfolio() {
-            document.getElementById('portfolioModal').style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            const modal = document.getElementById('portfolioModal');
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
         // vCard Creation Logic
         function downloadVCard() {
             const vCardData = `BEGIN:VCARD
